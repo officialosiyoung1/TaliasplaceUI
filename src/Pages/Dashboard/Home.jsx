@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useState } from 'react'
-import BookingsTable from './BookingsTable'
+import BookingsTable from './Bookingstable'
 import { fetchBookings, updateBookingStatus } from '../../api/bookings'
 
 // Polls for new bookings every 30s. Bump or remove this if you'd rather
