@@ -1,15 +1,17 @@
 import React from 'react'
-import BirthdayGlam01 from '../assets/portfolio/Birthdayglam01.jpeg'
+import birthdayGlam01 from '../assets/portfolio/Birthdayglam01.jpeg'
 import birthdayGlam02 from '../assets/portfolio/birthday glam 02.jpeg'
 import birthdayGlam03 from '../assets/portfolio/birthdayglam 03.jpeg'
 import modelGlam from '../assets/portfolio/Modelglam-dark1.jpeg'
 import photoshootGlam from '../assets/portfolio/photoshoot glam01.jpeg'
 import weddingGlam from '../assets/portfolio/Wedding glam 01.jpeg'
+import newTradPhoto from '../assets/portfolio/new tradphoto.jpeg'
+import photoshopImage from '../assets/portfolio/Photoshop.jpeg'
 
 const Portfolio = () => {
   const portfolio = [
     {
-      image: BirthdayGlam01,
+      image: birthdayGlam01,
       category: 'Birthday Glam',
     },
     {
@@ -31,6 +33,14 @@ const Portfolio = () => {
     {
       image: weddingGlam,
       category: 'Wedding Glam',
+    },
+    {
+      image: newTradPhoto,
+      category: 'New Traditional',
+    },
+    {
+      image: photoshopImage,
+      category: 'Photoshoot',
     },
   ]
 

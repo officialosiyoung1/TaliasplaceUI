@@ -36,7 +36,7 @@ const Contact = () => {
                   Email
                 </p>
                 <p className="mt-1 text-lg font-medium">
-                  hello@talias.place
+                  perpetualasadueze@gmail.com
                 </p>
               </div>
 
@@ -45,7 +45,7 @@ const Contact = () => {
                   Phone
                 </p>
                 <p className="mt-1 text-lg font-medium">
-                  +234 XXX XXX XXXX
+                  +234 8165827008
                 </p>
               </div>
 
@@ -54,7 +54,7 @@ const Contact = () => {
                   Location
                 </p>
                 <p className="mt-1 text-lg font-medium">
-                  Your Studio Location
+                  Abuja, Nigeria
                 </p>
               </div>
 

@@ -4,32 +4,32 @@ const Pricing = () => {
   const prices = [
     {
       service: 'Bridal Makeup',
-      price: '₦XX,XXX',
-      description: 'Elegant and long-lasting makeup for your special day.',
+      price: '₦150,000',
+      description: 'Elegant and long-lasting makeup for your special day, note that outside abuja will attract extra charges depending on the location.',
     },
     {
       service: 'Birthday & Events',
-      price: '₦XX,XXX',
+      price: '₦30,000',
       description: 'Beautiful makeup for birthdays, parties and celebrations.',
     },
     {
       service: 'Photoshoot Makeup',
-      price: '₦XX,XXX',
+      price: '₦30,000',
       description: 'Camera-ready makeup designed for your photoshoot.',
     },
     {
       service: 'Natural Makeup',
-      price: '₦XX,XXX',
+      price: '₦30,000',
       description: 'Soft and effortless makeup that enhances your natural beauty.',
     },
     {
       service: 'Full Glam',
-      price: '₦XX,XXX',
+      price: '₦30,000',
       description: 'A polished, glamorous look for your special occasion.',
     },
     {
       service: 'Makeup Training',
-      price: '₦XX,XXX',
+      price: '₦100,000',
       description: 'Personalized training to help you improve your makeup skills.',
     },
   ]
