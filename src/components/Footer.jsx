@@ -73,15 +73,15 @@ const Footer = () => {
 
             <div className="mt-5 space-y-3 text-sm text-gray-400">
               <p className="transition-colors duration-300 hover:text-white">
-                hello@talias.place
+                perpetualasadueze@gmail.com
               </p>
 
               <p className="transition-colors duration-300 hover:text-white">
-                +234 XXX XXX XXXX
+                +234 8165827008
               </p>
 
               <p className="transition-colors duration-300 hover:text-white">
-                Your Studio Location
+                Abuja, Nigeria
               </p>
             </div>
           </div>
