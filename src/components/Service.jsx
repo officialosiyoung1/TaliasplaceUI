@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Services = () => {
   const services = [
@@ -72,18 +73,19 @@ const Services = () => {
         <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
 
           {services.map((service) => (
-            <div
-              key={service.title}
-              className="rounded-3xl border border-white/10 p-6 transition duration-300 hover:-translate-y-1 hover:border-pink-400/50 hover:bg-white/[0.02] hover:shadow-lg hover:shadow-pink-500/5"
-            >
-              <h3 className="text-xl font-semibold">
-                {service.title}
-              </h3>
+           <Link
+                key={service.title}
+                to={`/book-me?service=${encodeURIComponent(service.title)}`}
+                className="rounded-3xl border border-white/10 p-6 transition duration-300 hover:-translate-y-1 hover:border-pink-400/50 hover:bg-white/[0.02] hover:shadow-lg hover:shadow-pink-500/5"
+              >
+                <h3 className="text-xl font-semibold">
+                  {service.title}
+                </h3>
 
-              <p className="mt-4 text-sm leading-6 text-gray-400">
-                {service.description}
-              </p>
-            </div>
+                <p className="mt-4 text-sm leading-6 text-gray-400">
+                  {service.description}
+                </p>
+              </Link>
           ))}
 
         </div>

@@ -1,17 +1,22 @@
 import React, { useState } from 'react'
+import { useSearchParams } from 'react-router-dom'
 import axios from 'axios'
 
-const BookMe = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    service: '',
-    date: '',
-    time: '',
-    appointmentType: '',
-    message: '',
-  })
+    const BookMe = () => {
+      const [searchParams] = useSearchParams()
+
+      const selectedService = searchParams.get('service') || ''
+
+      const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        phone: '',
+        service: selectedService,
+        date: '',
+        time: '',
+        appointmentType: '',
+        message: '',
+      })
 
   const [errors, setErrors] = useState({})
   const [isSubmitting, setIsSubmitting] = useState(false)

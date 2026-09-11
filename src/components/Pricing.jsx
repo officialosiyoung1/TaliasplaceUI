@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Pricing = () => {
   const prices = [
@@ -63,24 +64,25 @@ const Pricing = () => {
         {/* Pricing List */}
         <div className="mt-14 grid gap-4 lg:grid-cols-2">
           {prices.map((item) => (
-            <div
-              key={item.service}
-             className="flex flex-col justify-between gap-6 rounded-3xl border border-white/10 p-6 transition duration-300 hover:-translate-y-1 hover:border-pink-400/50 hover:bg-white/[0.02] hover:shadow-lg hover:shadow-pink-500/5 sm:flex-row sm:items-center"
-            >
-              <div>
-                <h3 className="text-xl font-semibold">
-                  {item.service}
-                </h3>
+           <Link
+                key={item.service}
+                to={`/book-me?service=${encodeURIComponent(item.service)}`}
+                className="flex flex-col justify-between gap-6 rounded-3xl border border-white/10 p-6 transition duration-300 hover:-translate-y-1 hover:border-pink-400/50 hover:bg-white/[0.02] hover:shadow-lg hover:shadow-pink-500/5 sm:flex-row sm:items-center"
+              >
+            <div>
+              <h3 className="text-xl font-semibold">
+                {item.service}
+              </h3>
 
-                <p className="mt-2 max-w-lg text-sm leading-6 text-gray-400">
-                  {item.description}
-                </p>
-              </div>
-
-             <p className="whitespace-nowrap text-2xl font-semibold text-pink-400">
-                {item.price}
+              <p className="mt-2 max-w-lg text-sm leading-6 text-gray-400">
+                {item.description}
               </p>
             </div>
+
+            <p className="whitespace-nowrap text-2xl font-semibold text-pink-400">
+              {item.price}
+            </p>
+          </Link>
           ))}
         </div>
 
