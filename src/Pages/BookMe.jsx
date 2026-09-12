@@ -67,67 +67,60 @@ import axios from 'axios'
       return newErrors
     }
 
-    const handleSubmit = async (event) => {
-    event.preventDefault()
-    setSuccessMessage('')
+          const handleSubmit = async (event) => {
+        event.preventDefault()
 
-    const validationErrors = validateForm()
+        setSuccessMessage('')
 
-    if (Object.keys(validationErrors).length > 0) {
-      setErrors(validationErrors)
-      return
-    }
+        const validationErrors = validateForm()
 
-    setErrors({})
-    setIsSubmitting(true)
+        if (Object.keys(validationErrors).length > 0) {
+          setErrors(validationErrors)
+          return
+        }
 
-        const bookingData = {
-      name: formData.name,
-      email: formData.email,
-      phone: formData.phone,
-      service: formData.service,
-      date: formData.date,
-      time: formData.time,
-      appointment_type: formData.appointmentType,
-      message: formData.message,
-    }
+        setErrors({})
+        setIsSubmitting(true)
 
-    const response = await axios.post(
-      `${import.meta.env.VITE_API_URL}/api/bookings/`,
-      bookingData,
-      {
-        headers: {
-          'Content-Type': 'application/json',
-        },
+        try {
+          const response = await axios.post(
+            `${import.meta.env.VITE_API_URL}/api/bookings/create-booking/`,
+            formData,
+            {
+              headers: {
+                'Content-Type': 'application/json',
+              },
+            }
+          )
+
+          const data = response.data
+
+          console.log('Booking created:', data)
+
+          setSuccessMessage(
+            'Your appointment request has been received. Talia will get back to you soon.'
+          )
+
+          setFormData({
+            name: '',
+            email: '',
+            phone: '',
+            service: '',
+            date: '',
+            time: '',
+            appointmentType: '',
+            message: '',
+          })
+        } catch (error) {
+          console.error('Booking error:', error)
+
+          setSuccessMessage(
+            'We could not submit your appointment request. Please try again.'
+          )
+        } finally {
+          setIsSubmitting(false)
+        }
       }
-    )
-
-      console.log('Booking created:', response.data)
-
-      setSuccessMessage(
-        'Your appointment request has been received. Talia will get back to you soon.'
-      )
-
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        service: '',
-        date: '',
-        time: '',
-        appointmentType: '',
-        message: '',
-      })
-    } catch (error) {
-      console.error('Booking error:', error)
-
-      setSuccessMessage(
-        'We could not submit your appointment request. Please try again.'
-      )
-    } finally {
-      setIsSubmitting(false)
-    }
-  }
 
   return (
 
